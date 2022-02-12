@@ -130,6 +130,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#for printing emails in Console(terminal)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 #for crisy form tags
