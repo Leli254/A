@@ -38,6 +38,25 @@
               <a class="nav-link active" href="{% url 'policy' %}">Privacy Policy</a>
             </li>
           </ul>
+          
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              {% if user.is_authenticated %}
+              
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+              </li>
+        
+              {% else %}
+        
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+              </li>
+        
+              {% endif %}
+            </ul>
+          </div>
+          
         <form action="/" method="get" class="form-inline mt-2 mt-md-0">
            <input id="q" name="q" value="{{ request.GET.q }}" 
              class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search">

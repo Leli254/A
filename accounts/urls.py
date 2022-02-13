@@ -10,7 +10,7 @@ urlpatterns = [
     path('signup',TemplateView.as_view(template_name='accounts/signup.html'),name='signup'),
     path('student-signup/',views.StudentSignUp.as_view(), name='StudentSignUp'),
     path('teacher-signup/',views.TeacherSignUp.as_view(), name='TeacherSignUp'),
-    path('login/',views.LoginView.as_view(), name='login'),
+    path('login/',auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='accounts/password_reset.html',
@@ -30,4 +30,5 @@ urlpatterns = [
              template_name='accounts/change_password.html',
              success_url = '/'
          ),name='change_password'),
+    path('logout/',auth_views.LogoutView.as_view(), name='logout'),
 ]    

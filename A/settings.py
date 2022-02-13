@@ -35,8 +35,13 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
-#user auth model settings
+
+
+#user authentication  settings
 AUTH_USER_MODEL='accounts.User'
+LOGOUT_REDIRECT_URL='/accounts/login'
+LOGIN_REDIRECT_URL='/'
+SESSION_COOKIE_SECURE= 'False'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
