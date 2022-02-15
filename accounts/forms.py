@@ -38,5 +38,8 @@ class ContactForm(forms.Form):
     category = forms.ChoiceField(choices=[('Courses', 'Courses'), ('Other', 'Other'),
                                           ])
     message = forms.CharField(widget=forms.Textarea)
+    
+    
+    
         
         

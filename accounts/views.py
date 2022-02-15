@@ -1,3 +1,4 @@
+from email import message
 from django.contrib.auth import login,authenticate
 from django.shortcuts import redirect,render
 #from django.core.mail import send_mail, BadHeaderError
@@ -39,5 +40,18 @@ class TeacherSignUp(CreateView):
 class ContactView(FormView):
     form_class = ContactForm
     template_name = 'contact.html'
-
     success_url = "/"
+    
+    def form_valid(self, form):
+        self.send_mail(form.cleaned_data)
+        return super(ContactView, self).form_valid(form)
+    
+    def send_mail(self, valid_data):
+        # Send mail logic
+        print(valid_data)
+        pass
+    
+    
+    
+    
+    
