@@ -11,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
     path('courses/', include('courses.urls')),
+    path('blog/', include('blog.urls')),
     
     #site pages
     path ('',TemplateView.as_view(template_name='home.html'),name='home'),
@@ -19,6 +20,7 @@ urlpatterns = [
     path ('terms/',TemplateView.as_view(template_name='terms.html'),name='terms'),
     path ('services',TemplateView.as_view(template_name='services.html'),name='services'),
     path ('contact/',ContactView.as_view(),name='contact'),
+    path ('faqs/',TemplateView.as_view(template_name='faqs.html'),name='faqs'),
 ]
 
 

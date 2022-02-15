@@ -1,7 +1,6 @@
 from django import forms
 from .models import Student,Teacher
 from django.contrib.auth.forms import UserCreationForm
-from django.db import transaction
 
 
 

@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'accounts',
     'memberships',
     'courses',
+    'blog',
     
     #built-in apps
     'django.contrib.admin',

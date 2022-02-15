@@ -1,9 +1,7 @@
-from email import message
-from django.contrib.auth import login,authenticate
-from django.shortcuts import redirect,render
+from django.contrib.auth import login
+from django.shortcuts import redirect
 #from django.core.mail import send_mail, BadHeaderError
-from django.contrib.auth.forms import  AuthenticationForm 
-from django.views.generic import View
+#from django.contrib.auth.forms import  AuthenticationForm 
 from django.views.generic import CreateView,FormView
 
 from .forms import StudentSignUpForm,TeacherSignUpForm,ContactForm
