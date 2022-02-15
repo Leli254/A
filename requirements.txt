@@ -5,3 +5,11 @@ Django==4.0.2
 django-crispy-forms==1.14.0
 django-widget-tweaks==1.4.12
 sqlparse==0.4.2
+certifi==2021.10.8
+charset-normalizer==2.0.12
+idna==3.3
+Pillow==9.0.1
+requests==2.27.1
+stripe==2.65.0
+urllib3==1.26.8
+
