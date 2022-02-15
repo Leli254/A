@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,6 +24,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #user defined apps
     'accounts',
+    'memberships',
+    'courses',
+    
     #built-in apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     #third-party apps
     'crispy_forms',
     "crispy_bootstrap5",
@@ -135,7 +141,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#for printing emails in Console(terminal)
+#for printing emails in Console(terminal) email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
@@ -145,3 +151,12 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+ #configurations for stripe
+if DEBUG:
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_8pUBm5JrWpDZfnJ1WdvssH2300umjAVpo2'
+    STRIPE_SECRET_KEY = 'sk_test_D07Y9OzNkW0biuvJ2U9LcK9000Kz9QKlHN'
+
+else:
+    # live keys
+    STRIPE_PUBLISHABLE_KEY = ''
+    STRIPE_SECRET_KEY = ''
